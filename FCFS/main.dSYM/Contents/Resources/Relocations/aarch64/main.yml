@@ -1,0 +1,18 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     main
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x100002828, symSize: 0x98 }
+  - { offsetInCU: 0xCD, offset: 0xCD, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x100002828, symSize: 0x98 }
+  - { offsetInCU: 0xF1, offset: 0xF1, size: 0x8, addend: 0x0, symName: _nextRun, symObjAddr: 0x98, symBinAddr: 0x1000028C0, symSize: 0xD4 }
+  - { offsetInCU: 0x15F, offset: 0x15F, size: 0x8, addend: 0x0, symName: _SchedulingAlgorithm, symObjAddr: 0x16C, symBinAddr: 0x100002994, symSize: 0x6C8 }
+  - { offsetInCU: 0x26, offset: 0x33C, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x10000305C, symSize: 0x214 }
+  - { offsetInCU: 0x8E, offset: 0x3A4, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x10000305C, symSize: 0x214 }
+  - { offsetInCU: 0x26, offset: 0x63F, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x100003270, symSize: 0x68 }
+  - { offsetInCU: 0x33, offset: 0x64C, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x100003270, symSize: 0x68 }
+  - { offsetInCU: 0x26, offset: 0x6F5, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x1000032D8, symSize: 0x680 }
+  - { offsetInCU: 0x41, offset: 0x710, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x1000032D8, symSize: 0x680 }
+  - { offsetInCU: 0x26, offset: 0x888, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0xF0 }
+  - { offsetInCU: 0x41, offset: 0x8A3, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0xF0 }
+  - { offsetInCU: 0xB9, offset: 0x91B, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xF0, symBinAddr: 0x100003A48, symSize: 0x220 }
+...
