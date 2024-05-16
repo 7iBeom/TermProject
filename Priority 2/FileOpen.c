@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Priority.h"
+#include "SchedulingAlgorithm.h"
 
 // 파일 오픈 함수
 int OpenFile(const char* filename, Process** process) {

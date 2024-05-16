@@ -2,12 +2,23 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "Priority.h"
+#include "SchedulingAlgorithm.h"
 
 #define DRAW(x, y) printf("\033[%d;%dH", (y), (x))
 #define SHOW_TEXT(x) printf("\033(B%d",x)
 
 void ShowGanttChart(ResultElement gantt[], int size) {
+    
+
+    for (int i = 0; i < size-1; i++) {
+        for (int j = 1; j < size; j++) {
+            if (gantt[i].processID == gantt[j].processID && gantt[i].waitingTime < gantt[j].waitingTime) {
+                gantt[j].burstTime -= gantt[i].burstTime;
+                
+            }
+        }
+    }
+    
     int time = 0;
     int x = 1, y = 10, height = 3;
     for (int i = 0; i <15; i++) printf("\n");

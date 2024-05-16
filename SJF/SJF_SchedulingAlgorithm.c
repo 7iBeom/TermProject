@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 
-#include "Priority.h"
+#include "SchedulingAlgorithm.h"
 
 // 결과 출력 함수
 void ShowResult(ResultElement process) {
@@ -13,14 +13,26 @@ void ShowResult(ResultElement process) {
 int nextRun(Process* process, int size) {
     int index = 0;
     Process highPriority = *process;
+
+    for (int i = 0; i < size; i++) {
+        if (highPriority.processID == -1 && process[i].processID != -1) {
+            highPriority = process[i];
+            index = i;
+            break;
+        }
+    }
+
     for (int i = 0; i < size; i++) {
         if (process[i].processID != -1) {
-            if (highPriority.priority < process[i].priority) {
+            if (highPriority.burstTime > process[i].burstTime) {
+                highPriority = process[i];
                 index = i;
             }
-            else if (highPriority.priority == process[i].priority && highPriority.arrivalTime < process[i].arrivalTime) {
+            else if (highPriority.burstTime == process[i].burstTime && highPriority.arrivalTime > process[i].arrivalTime) {
+                highPriority = process[i];
                 index = i;
             }
+            //else if ()
         }
         
     }
@@ -59,7 +71,7 @@ void SchedulingAlgorithm(Process process[], int numProcess) {
     Initialize(&runProcess, 0); // 실행 중인 프로세스가 없다는 것을 의미
 
     printf("\n----------------------\n");
-    printf("우선순위 스케줄링 실행\n");
+    printf("SJF 스케줄링 실행\n");
     printf("----------------------\n\n");
     printf("출력\n");
     printf("-------------------------------------------\n");
@@ -82,7 +94,7 @@ void SchedulingAlgorithm(Process process[], int numProcess) {
         }
         else { // 실행 중인 프로세스가 있는 경우 ready queue에서 대기 중인 프로세스 중 우선순위가 가장 높은 프로세스가 실행
             for (int i = 0; i < newProcess; i++) {
-                if (readyQueue[i].processID != -1 && runProcess->priority > readyQueue[i].priority) {
+                if (readyQueue[i].processID != -1 && runProcess->burstTime > readyQueue[i].burstTime) {
                     for (int j = 0; j < numProcess; j++) {
                         if (runProcess->processID == showProcess[j].processID) {
                             ShowResult(showProcess[j]);

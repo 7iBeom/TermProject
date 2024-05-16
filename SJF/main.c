@@ -1,10 +1,10 @@
-﻿// Priority Scheduling Algorithm
+﻿// SJF Scheduling Algorithm
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h> // 윈도우에서 실행 시 <io.h>로 변경
+#include <unistd.h> // 윈도우에서 실행 시 <io.h>로 변경하고 경로 '\'로 바꾸기
 
-#include "Priority.h"
+#include "SchedulingAlgorithm.h"
 
 // Sort by Arrival Time
 void Sort(Process process[], int numProcess) {

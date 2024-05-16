@@ -1,7 +1,7 @@
 ﻿#include <stdio.h>
 #include <stdlib.h>
 
-#include "Priority.h"
+#include "SchedulingAlgorithm.h"
 
 // Queue 초기화 (Ready Queue에 있던 프로세스가 실행되는 과정)
 void Initialize(Process** process, int index) {

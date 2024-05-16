@@ -13,9 +13,22 @@ void ShowResult(ResultElement process) {
 int nextRun(Process* process, int size) {
     int index = 0;
     Process highPriority = *process;
+
     for (int i = 0; i < size; i++) {
-        if (highPriority.processID != -1 || process[i].processID != -1) {
-            if (highPriority.arrivalTime > process[i].arrivalTime || highPriority.burstTime == 0) {
+        if (highPriority.processID == -1 && process[i].processID != -1) {
+            highPriority = process[i];
+            index = i;
+            break;
+        }
+    }
+
+    for (int i = 0; i < size; i++) {
+        if (process[i].processID != -1) {
+            if (highPriority.priority > process[i].priority) { // 다음 실행될 프로세스이기 때문에 준비 큐에 있는 프로세스 중 가장 우선순위가 높아야 함
+                highPriority = process[i];
+                index = i;
+            }
+            else if (highPriority.priority == process[i].priority && highPriority.arrivalTime > process[i].arrivalTime) {
                 highPriority = process[i];
                 index = i;
             }
@@ -57,7 +70,7 @@ void SchedulingAlgorithm(Process process[], int numProcess) {
     Initialize(&runProcess, 0); // 실행 중인 프로세스가 없다는 것을 의미
 
     printf("\n----------------------\n");
-    printf("FCFS 스케줄링 실행\n");
+    printf("우선순위 스케줄링 실행\n");
     printf("----------------------\n\n");
     printf("출력\n");
     printf("-------------------------------------------\n");
@@ -78,7 +91,23 @@ void SchedulingAlgorithm(Process process[], int numProcess) {
             *runProcess = readyQueue[index];
             Initialize(&readyQueue, index);
         }
-        
+        else { // 실행 중인 프로세스가 있는 경우 ready queue에서 대기 중인 프로세스 중 우선순위가 가장 높은 프로세스가 실행 (숫자가 낮을수록 우선순위가 높음)
+            for (int i = 0; i < newProcess; i++) {
+                if (readyQueue[i].processID != -1 && runProcess->priority > readyQueue[i].priority) {
+                    for (int j = 0; j < numProcess; j++) {
+                        if (runProcess->processID == showProcess[j].processID) {
+                            ShowResult(showProcess[j]);
+                            gantt[ganttIndex] = showProcess[j];
+                            ganttIndex++;
+                            gantt = realloc(gantt, sizeof(ResultElement) * (ganttIndex+1));
+                        }
+                    }
+                    Process temp = *runProcess;
+                    *runProcess = readyQueue[i]; // 대기 중인 프로세스 실행
+                    readyQueue[i] = temp; // 대기 중인 프로세스가 있던 자리에 실행하던 프로세스 
+                }
+            }
+        }
         // 프로세스 실행
         if (runProcess->burstTime != 0) {
             for (int i = 0; i < numProcess; i++) {
