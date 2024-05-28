@@ -1,4 +1,4 @@
-﻿// SJF Scheduling Algorithm
+﻿// Priority Scheduling Algorithm
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -39,7 +39,7 @@ int main(int argc, char *argv[]) {
     }
 
     // List of process
-    printf("SJF 스케줄링\n");
+    printf("선점형 우선순위 스케줄링\n");
     printf("입력\n");
     printf("---------------------------------------------------------\n");
     printf("Process ID\t Arrival Time\t Burst Time\t Priority\n");

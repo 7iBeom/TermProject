@@ -25,7 +25,7 @@ int main(int argc, char *argv[]) {
     }
 
     // List of process
-    printf("\nFCFS 스케줄링\n\n");
+    printf("\nSRTF 스케줄링\n\n");
     printf("입력\n");
     printf("-------------------------------------------\n");
     printf("Process ID\t Arrival Time\t Burst Time\n");

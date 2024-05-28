@@ -2,17 +2,18 @@
 triple:          'arm64-apple-darwin'
 binary-path:     main
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x10000244C, symSize: 0x214 }
-  - { offsetInCU: 0x8E, offset: 0x8E, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x10000244C, symSize: 0x214 }
-  - { offsetInCU: 0x26, offset: 0x329, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x100002660, symSize: 0x68 }
-  - { offsetInCU: 0x33, offset: 0x336, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x100002660, symSize: 0x68 }
-  - { offsetInCU: 0x26, offset: 0x3DF, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x1000026C8, symSize: 0x98 }
-  - { offsetInCU: 0xCD, offset: 0x486, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x1000026C8, symSize: 0x98 }
-  - { offsetInCU: 0xF1, offset: 0x4AA, size: 0x8, addend: 0x0, symName: _nextRun, symObjAddr: 0x98, symBinAddr: 0x100002760, symSize: 0x1AC }
-  - { offsetInCU: 0x17B, offset: 0x534, size: 0x8, addend: 0x0, symName: _SchedulingAlgorithm, symObjAddr: 0x244, symBinAddr: 0x10000290C, symSize: 0x880 }
-  - { offsetInCU: 0x26, offset: 0x771, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x10000318C, symSize: 0x7CC }
-  - { offsetInCU: 0x41, offset: 0x78C, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x10000318C, symSize: 0x7CC }
-  - { offsetInCU: 0x26, offset: 0x959, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0xF0 }
-  - { offsetInCU: 0x41, offset: 0x974, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x100003958, symSize: 0xF0 }
-  - { offsetInCU: 0xB9, offset: 0x9EC, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xF0, symBinAddr: 0x100003A48, symSize: 0x220 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x1000023CC, symSize: 0x214 }
+  - { offsetInCU: 0x8E, offset: 0x8E, size: 0x8, addend: 0x0, symName: _OpenFile, symObjAddr: 0x0, symBinAddr: 0x1000023CC, symSize: 0x214 }
+  - { offsetInCU: 0x26, offset: 0x329, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x1000025E0, symSize: 0x68 }
+  - { offsetInCU: 0x33, offset: 0x336, size: 0x8, addend: 0x0, symName: _Initialize, symObjAddr: 0x0, symBinAddr: 0x1000025E0, symSize: 0x68 }
+  - { offsetInCU: 0x26, offset: 0x3DF, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x100002648, symSize: 0x98 }
+  - { offsetInCU: 0xCD, offset: 0x486, size: 0x8, addend: 0x0, symName: _ShowResult, symObjAddr: 0x0, symBinAddr: 0x100002648, symSize: 0x98 }
+  - { offsetInCU: 0xF1, offset: 0x4AA, size: 0x8, addend: 0x0, symName: _Shift, symObjAddr: 0x98, symBinAddr: 0x1000026E0, symSize: 0x114 }
+  - { offsetInCU: 0x169, offset: 0x522, size: 0x8, addend: 0x0, symName: _nextRun, symObjAddr: 0x1AC, symBinAddr: 0x1000027F4, symSize: 0x238 }
+  - { offsetInCU: 0x1F3, offset: 0x5AC, size: 0x8, addend: 0x0, symName: _SchedulingAlgorithm, symObjAddr: 0x3E4, symBinAddr: 0x100002A2C, symSize: 0x774 }
+  - { offsetInCU: 0x26, offset: 0x7C5, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x1000031A0, symSize: 0x7CC }
+  - { offsetInCU: 0x41, offset: 0x7E0, size: 0x8, addend: 0x0, symName: _ShowGanttChart, symObjAddr: 0x0, symBinAddr: 0x1000031A0, symSize: 0x7CC }
+  - { offsetInCU: 0x26, offset: 0x9AD, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x10000396C, symSize: 0xF0 }
+  - { offsetInCU: 0x41, offset: 0x9C8, size: 0x8, addend: 0x0, symName: _Sort, symObjAddr: 0x0, symBinAddr: 0x10000396C, symSize: 0xF0 }
+  - { offsetInCU: 0xB9, offset: 0xA40, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0xF0, symBinAddr: 0x100003A5C, symSize: 0x214 }
 ...

@@ -1,8 +1,8 @@
-﻿// FCFS Scheduling Algorithm
+﻿// Priority Scheduling Algorithm
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <unistd.h> // 윈도우에서 실행 시 <io.h>로 변경하고 경로 '\'로 변경
+#include <unistd.h> // 윈도우에서 실행 시 <io.h>로 변경하고 경로 '\'로 바꾸기
 
 #include "SchedulingAlgorithm.h"
 
@@ -25,13 +25,13 @@ int main(int argc, char *argv[]) {
     }
 
     // List of process
-    printf("\nFCFS 스케줄링\n\n");
-    printf("입력\n");
-    printf("-------------------------------------------\n");
-    printf("Process ID\t Arrival Time\t Burst Time\n");
-    printf("-------------------------------------------\n");
+    printf("\nPreemptive Priority 스케줄링\n");
+    printf("\n입력\n");
+    printf("---------------------------------------------------------\n");
+    printf("Process ID\t Arrival Time\t Burst Time\t Priority\n");
+    printf("---------------------------------------------------------\n");
     for (int i = 0; i < numProcess; i++) {
-        printf("%2d\t\t %2d\t\t %2d\n", process[i].processID, process[i].arrivalTime, process[i].burstTime);
+        printf("%2d\t\t %2d\t\t %2d\t\t %2d\n", process[i].processID, process[i].arrivalTime, process[i].burstTime, process[i].priority);
     }
 
     // Sort by Arrival Time

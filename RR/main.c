@@ -24,24 +24,26 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
+    // 1번 프로세스의 도착 시간으로 모든 프로세스의 도착 시간 통일
+    for (int i = 0; i < numProcess; i++) 
+        process[i].arrivalTime = process[0].arrivalTime;
+
     // List of process
-    printf("\nFCFS 스케줄링\n\n");
-    printf("입력\n");
-    printf("-------------------------------------------\n");
-    printf("Process ID\t Arrival Time\t Burst Time\n");
-    printf("-------------------------------------------\n");
+    printf("\nRound Robin 스케줄링\n");
+    printf("\n입력\n");
+    printf("-------------------------------------------------------------\n");
+    printf("Process ID\t Arrival Time\t Burst Time\t Time Quantum\n");
+    printf("-------------------------------------------------------------\n");
     for (int i = 0; i < numProcess; i++) {
-        printf("%2d\t\t %2d\t\t %2d\n", process[i].processID, process[i].arrivalTime, process[i].burstTime);
+        printf("%2d\t\t %2d\t\t %2d\t\t %2d\n", process[i].processID, process[i].arrivalTime, process[i].burstTime, process[0].priority);
     }
 
     // Sort by Arrival Time
     Sort(process, numProcess);
 
     // Run Scheduling Algorithm
-    SchedulingAlgorithm(process, numProcess);
+    RR(process, numProcess);
 
     free(process);
     return 0;
-
-    
 }
